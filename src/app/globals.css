@@ -82,3 +82,25 @@
 .project-spotlight {
   background: linear-gradient(129.44deg, rgba(169, 163, 194, .28) .84%, rgba(169, 163, 194, .056) 20.97%);
 }
+
+.project-galery-container {
+  align-items: space-between;
+}
+
+.project-galery {
+  flex: 1 1 400px;
+}
+
+.overlay {
+  background: white;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.single-project * {
+  pointer-events: all;
+}

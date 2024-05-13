@@ -1,15 +1,33 @@
 import React from 'react'
 import ProjectSpotlight, { ProjectSpotlightCard } from './ProjectSpotlight'
 import { Card, CardContent } from '../ui/card'
+import Image from 'next/image'
+import { cn } from '@/lib/utils'
 
-export const ProjectCard = () => {
+interface ProjectCardProps {
+  link: string,
+  className?: string
+}
+
+export const ProjectCard = ({ link, className }: ProjectCardProps) => {
   return (
-    <ProjectSpotlight className="group">
-      <ProjectSpotlightCard className='w-full h-full'>
-        <Card className='w-[400px] h-[304px] border-0 project-bg z-[2] inset-px'>
-          <CardContent></CardContent>
-        </Card>
-      </ProjectSpotlightCard>
-    </ProjectSpotlight>
+    // <ProjectSpotlight className="group">
+    //   <ProjectSpotlightCard className='size-full'>
+
+    //   </ProjectSpotlightCard>
+    // </ProjectSpotlight>
+    <div className={cn(`group w-full h-full`, className)}>
+      <Card className='relative size-full border-0 z-[2]'>
+        <CardContent>
+          <Image
+            src={link}
+            alt=''
+            fill
+            aria-hidden
+            className='w-full h-full object-cover rounded-md opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:animate-fade-in animate-fade-out transition-all ease-in-out duration-200'
+          />
+        </CardContent>
+      </Card>
+    </div>
   )
 }

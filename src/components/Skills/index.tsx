@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { motion, useInView } from "framer-motion";
 import { SkillCard } from './SkillCard';
 
@@ -27,10 +27,6 @@ export const Skills = () => {
       }
     }
   };
-
-  useEffect(() => {
-    console.log('isInView', isInView)
-  }, [isInView])
 
   return (
     <motion.div

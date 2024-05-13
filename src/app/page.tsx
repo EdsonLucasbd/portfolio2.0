@@ -29,11 +29,11 @@ export default function Home() {
         <Skills />
       </section>
 
-      <div className="-z-1 left-0 h-full w-full bg-[radial-gradient(#eaeaea_0.1px,transparent_0.7px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_40%_50%_at_50%_50%,#000_40%,transparent_100%)]">
-        <section className="flex flex-col items-center justify-center h-full mb-32">
-          <Projects />
-        </section>
-      </div>
+      {/* <div className="relative -z-1 left-0 h-full w-full bg-[radial-gradient(#eaeaea_0.1px,transparent_0.7px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_90%_50%_at_50%_50%,#000_40%,transparent_100%)]"> */}
+      <section className="flex flex-col items-center justify-center h-full mb-32">
+        <Projects />
+      </section>
+      {/* </div> */}
 
     </main>
   );
