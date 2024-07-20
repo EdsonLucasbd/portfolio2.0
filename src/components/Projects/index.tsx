@@ -1,56 +1,16 @@
-"use client"
-import React, { useRef, useState } from 'react'
-import { ProjectCard } from './ProjectCard'
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../ui/dialog'
-import { DialogTrigger } from '@radix-ui/react-dialog'
+"use client";
+import React, { useRef } from "react";
 
-interface Project {
-  // project: React.JSX.Element,
-  index: number,
-  link: string
-}
+import { motion } from "framer-motion";
+import { type Card, LayoutGrid } from "../LayoutGrid";
+import { ProjectCardTemplate } from "./ProjectCardTemplate";
 
-interface AppState {
-  index: number | false;
-}
-
-const ProjectGallery = ({ projects }: { projects: Project[] }) => {
-  const [state, setState] = useState<AppState>({ index: false });
-
-  const { index } = state;
-
-  const handleSetIndex = (i: number) => {
-    console.log('clicou, id:', i)
-    setState({ index: i });
-  };
-
-  return (
-    <ul className='flex flex-col md:flex-row flex-wrap size-full gap-6 items-center justify-between list-none'>
-      <Dialog>
-        {projects.map((project) => (
-          <DialogTrigger key={project.index}>
-            <ProjectCard link={project.link} className='w-[400px] h-[204px] cursor-pointer' />
-          </DialogTrigger>
-        ))}
-        <DialogContent className='animate-fade-up'>
-          <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
-            <DialogDescription>
-              This action cannot be undone. This will permanently delete your account
-              and remove your data from our servers.
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
-    </ul>
-  )
+interface Project extends Card {
+  link?: string;
 }
 
 export const Projects = () => {
-
-  const projectsContainer = useRef(null)
-
+  const projectsContainer = useRef(null);
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -59,40 +19,233 @@ export const Projects = () => {
       scale: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const ElStore = () => {
+    return (
+      <ProjectCardTemplate
+        title="EL Store"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const AvBoss = () => {
+    return (
+      <ProjectCardTemplate
+        title="AV Boss"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const AmazingStadiums = () => {
+    return (
+      <ProjectCardTemplate
+        title="Amazing Stadiums"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const AvExpert = () => {
+    return (
+      <ProjectCardTemplate
+        title="AV Expert"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const OldPortfolio = () => {
+    return (
+      <ProjectCardTemplate
+        title="Portfolio antigo"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const ProspeccaoAssertiva = () => {
+    return (
+      <ProjectCardTemplate
+        title="Prospeccao Assertiva"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const LnsSite = () => {
+    return (
+      <ProjectCardTemplate
+        title="LNS Site"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const PgLinksKauane = () => {
+    return (
+      <ProjectCardTemplate
+        title="Página de Links"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const QrCode = () => {
+    return (
+      <ProjectCardTemplate
+        title="Gerador de QR Code"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
+  };
+
+  const PagLinks = () => {
+    return (
+      <ProjectCardTemplate
+        title="Página de Links"
+        description={`A house by the river is a place of peace and 
+            tranquility. It&apos;s the perfect place to relax, unwind, 
+            and enjoy life.`
+        }
+        link="#"
+      />
+    );
   };
 
   const projects: Project[] = [
-    { index: 0, link: '/projects/el-store.png' },
-    { index: 1, link: '/projects/av-boss.png' },
-    { index: 2, link: '/projects/amazing-stadiums.png' },
-    { index: 3, link: '/projects/av-expert.png' },
-    { index: 4, link: '/projects/old-portfolio.png' },
-    { index: 5, link: '/projects/prospeccao-assertiva.png' },
-    { index: 6, link: '/projects/lns-site.png' },
-    { index: 7, link: '/projects/pg-links-kauane.png' },
-    { index: 8, link: '/projects/qr-code-gen.png' },
-    { index: 9, link: '/projects/pg-links.png' }
-  ]
+    {
+      id: 0,
+      thumbnail: "/projects/el-store.png",
+      className: "col-span-1 h-80",
+      content: <ElStore />,
+    },
+    {
+      id: 1,
+      thumbnail: "/projects/av-boss.png",
+      className: "col-span-1  h-80",
+      content: <AvBoss />,
+    },
+    {
+      id: 2,
+      thumbnail: "/projects/amazing-stadiums.png",
+      className: "col-span-1 h-80",
+      content: <AmazingStadiums />,
+    },
+    {
+      id: 3,
+      thumbnail: "/projects/av-expert.png",
+      className: "md:col-span-2 h-80",
+      content: <AvExpert />,
+    },
+    {
+      id: 4,
+      thumbnail: "/projects/lns-site.png",
+      className: "col-span-1 h-80",
+      content: <LnsSite />,
+    },
+    {
+      id: 5,
+      thumbnail: "/projects/prospeccao-assertiva.png",
+      className: "col-span-1 h-80",
+      content: <ProspeccaoAssertiva />,
+    },
+    {
+      id: 6,
+      thumbnail: "/projects/old-portfolio.png",
+      className: "md:col-span-2 h-80",
+      content: <OldPortfolio />,
+    },
+    {
+      id: 7,
+      thumbnail: "/projects/pg-links-kauane.png",
+      className: "col-span-1 h-80",
+      content: <PgLinksKauane />,
+    },
+    {
+      id: 8,
+      content: <QrCode />,
+      className: "col-span-1 h-80",
+      thumbnail: "/projects/qr-code-gen.png",
+    },
+    {
+      id: 9,
+      thumbnail: "/projects/pg-links.png",
+      className: "col-span-1 h-80",
+      content: <PagLinks />,
+    },
+  ];
 
   return (
     <motion.div
-      className='flex flex-col gap-10 items-center w-full h-full'
-      initial="hidden"
-      whileInView="visible"
-      variants={container}
-      ref={projectsContainer}
+      className="flex flex-col gap-10 items-center w-full h-full"
+    // initial="hidden"
+    // whileInView="visible"
+    // variants={container}
+    // ref={projectsContainer}
     >
-      <h2 className="text-4xl text-center font-sans font-semibold bg-gradient-to-b from-white via-white to-white 
+      <motion.h2
+        initial={{
+          opacity: 0,
+          x: 1 % 2 === 0 ? 50 : -50
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 1
+          }
+        }}
+        // viewport={{ once: true }}
+        className="text-4xl text-center font-sans font-semibold bg-gradient-to-b from-white via-white to-white 
             bg-opacity-70 bg-clip-text text-transparent"
       >
         Projetos
-      </h2>
-      <div className="relative">
-        <ProjectGallery projects={projects} />
+      </motion.h2>
+      <div className="h-full w-full">
+        <LayoutGrid cards={projects} />
       </div>
     </motion.div>
-  )
-}
+  );
+};

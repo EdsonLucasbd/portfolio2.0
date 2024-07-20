@@ -75,6 +75,25 @@
   }
 }
 
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9528d5;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
 .project-bg {
   background: linear-gradient(180deg, rgba(5, 1, 11, 0) 22.69%, rgba(17, 16, 18, 0.5) 100%);
 }

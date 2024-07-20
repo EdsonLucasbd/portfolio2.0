@@ -92,7 +92,7 @@ const config = {
         },
         "fade-in": {
           "0%": {
-            "opacity": "0.5"
+            "opacity": "0.9"
           },
           "100%": {
             "opacity": "1"
@@ -103,7 +103,27 @@ const config = {
             "opacity": "1"
           },
           "100%": {
-            "opacity": "0.5"
+            "opacity": "0.99"
+          }
+        },
+        "zoom-in": {
+          "0%": {
+            "opacity": "0",
+            "transform": "scale(.5)"
+          },
+          "100%": {
+            "opacity": "1",
+            "transform": "scale(1)"
+          }
+        },
+        "zoom-out": {
+          "0%": {
+            "opacity": "1",
+            "transform": "scale(1)"
+          },
+          "100%": {
+            "opacity": "0",
+            "transform": "scale(.5)"
           }
         },
       },
@@ -113,11 +133,12 @@ const config = {
         text: 'text 8s ease-in-out infinite',
         "fade-in": "fade-in 0.6s ease-in",
         "fade-out": "fade-out 0.6s ease-out",
+        "zoom-in": "zoom-in 0.6s forwards",
+        "zoom-out": "zoom-out 0.6s forwards"
       },
     },
   },
   plugins: [
-    require('tailwindcss-animated'),
     plugin(
       function({addVariant}:{
         addVariant: (variant: string, classes: string) => void;

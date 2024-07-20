@@ -1,33 +1,38 @@
-import React from 'react'
-import ProjectSpotlight, { ProjectSpotlightCard } from './ProjectSpotlight'
-import { Card, CardContent } from '../ui/card'
-import Image from 'next/image'
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import type React from "react";
+import { Card, CardContent, CardDescription, CardFooter } from "../ui/card";
+import ProjectSpotlight, { ProjectSpotlightCard } from "./ProjectSpotlight";
 
 interface ProjectCardProps {
-  link: string,
-  className?: string
+	link: string;
+	content: string;
+	className?: string;
 }
 
-export const ProjectCard = ({ link, className }: ProjectCardProps) => {
-  return (
-    // <ProjectSpotlight className="group">
-    //   <ProjectSpotlightCard className='size-full'>
-
-    //   </ProjectSpotlightCard>
-    // </ProjectSpotlight>
-    <div className={cn(`group w-full h-full`, className)}>
-      <Card className='relative size-full border-0 z-[2]'>
-        <CardContent>
-          <Image
-            src={link}
-            alt=''
-            fill
-            aria-hidden
-            className='w-full h-full object-cover rounded-md opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 group-hover:animate-fade-in animate-fade-out transition-all ease-in-out duration-200'
-          />
-        </CardContent>
-      </Card>
-    </div>
-  )
-}
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+	link,
+	className,
+	content,
+}) => {
+	return (
+		<div className={cn(`group w-full h-full`, className)}>
+			<Card className="relative size-full border-0 z-[2]">
+				<CardContent>
+					<Image
+						src={thumbnail}
+						alt=""
+						fill
+						aria-hidden
+						className="w-full h-full object-cover rounded-md grayscale group-hover:grayscale-0 group-hover:animate-fade-in animate-fade-out transition-all ease-in-out duration-200"
+					/>
+				</CardContent>
+				<CardDescription>{content}</CardDescription>
+				<CardFooter>
+					<Link href={link}>Ver projeto</Link>
+				</CardFooter>
+			</Card>
+		</div>
+	);
+};
