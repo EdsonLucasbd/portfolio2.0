@@ -41,7 +41,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 					duration: 1
 				}
 			}}
-			// viewport={{ once: true }}
+			viewport={{ once: true }}
 			className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative"
 		>
 			{cards.map((card, i) => (
@@ -55,6 +55,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 							opacity: 1,
 							y: 0
 						}}
+						viewport={{ once: true }}
 						onClick={() => handleClick(card)}
 						className={cn(
 							card.className,

@@ -220,10 +220,6 @@ export const Projects = () => {
   return (
     <motion.div
       className="flex flex-col gap-10 items-center w-full h-full"
-    // initial="hidden"
-    // whileInView="visible"
-    // variants={container}
-    // ref={projectsContainer}
     >
       <motion.h2
         initial={{
@@ -237,7 +233,7 @@ export const Projects = () => {
             duration: 1
           }
         }}
-        // viewport={{ once: true }}
+        viewport={{ once: true }}
         className="text-4xl text-center font-sans font-semibold bg-gradient-to-b from-white via-white to-white 
             bg-opacity-70 bg-clip-text text-transparent"
       >
