@@ -42,7 +42,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 				}
 			}}
 			viewport={{ once: true }}
-			className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative"
+			className="w-full h-full p-10 pt-0 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative"
 		>
 			{cards.map((card, i) => (
 				<div key={i} className={cn(card.className, "flex")}>

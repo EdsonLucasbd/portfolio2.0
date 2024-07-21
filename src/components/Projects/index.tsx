@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 
 import { motion } from "framer-motion";
-import { type Card, LayoutGrid } from "../LayoutGrid";
+import { type Card, LayoutGrid } from "@/components/ui/LayoutGrid";
 import { ProjectCardTemplate } from "./ProjectCardTemplate";
 
 interface Project extends Card {
@@ -10,19 +10,6 @@ interface Project extends Card {
 }
 
 export const Projects = () => {
-  const projectsContainer = useRef(null);
-
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
   const ElStore = () => {
     return (
@@ -40,7 +27,7 @@ export const Projects = () => {
   const AvBoss = () => {
     return (
       <ProjectCardTemplate
-        title="AV Boss"
+        title="Página de vendas AV Boss"
         description={`A house by the river is a place of peace and 
             tranquility. It&apos;s the perfect place to relax, unwind, 
             and enjoy life.`
@@ -66,7 +53,7 @@ export const Projects = () => {
   const AvExpert = () => {
     return (
       <ProjectCardTemplate
-        title="AV Expert"
+        title="Página de vendas AV Expert"
         description={`A house by the river is a place of peace and 
             tranquility. It&apos;s the perfect place to relax, unwind, 
             and enjoy life.`
@@ -92,7 +79,7 @@ export const Projects = () => {
   const ProspeccaoAssertiva = () => {
     return (
       <ProjectCardTemplate
-        title="Prospeccao Assertiva"
+        title="Página de vendas Prospecção Assertiva"
         description={`A house by the river is a place of peace and 
             tranquility. It&apos;s the perfect place to relax, unwind, 
             and enjoy life.`

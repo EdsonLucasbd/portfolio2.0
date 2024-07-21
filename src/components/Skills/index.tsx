@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import { SkillCard } from "./SkillCard";
+import { Subtitle } from "../Subtitle";
 
 export const Skills = () => {
 	const skillContainer = useRef(null);
@@ -36,12 +37,9 @@ export const Skills = () => {
 			viewport={{ once: true }}
 			ref={skillContainer}
 		>
-			<h2
-				className="text-4xl text-center font-sans font-semibold bg-gradient-to-b from-white via-white to-white 
-            bg-opacity-70 bg-clip-text text-transparent"
-			>
+			<Subtitle>
 				Skils
-			</h2>
+			</Subtitle>
 			<div className="flex gap-10">
 				{skills.map((skill, index) => (
 					<SkillCard name={skill} key={index} />

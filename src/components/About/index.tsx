@@ -1,6 +1,7 @@
 "use client";
 import React from 'react'
 import { motion } from "framer-motion"
+import { Subtitle } from '../Subtitle';
 
 export const About = () => {
   return (
@@ -19,12 +20,9 @@ export const About = () => {
       }}
       viewport={{ once: true }}
     >
-      <h2
-        className="text-4xl text-start font-sans font-semibold bg-gradient-to-b from-white via-white to-white 
-            bg-opacity-70 bg-clip-text text-transparent animate-fade-up animate-ease-in"
-      >
+      <Subtitle className='text-start'>
         Um pouco sobre mim
-      </h2>
+      </Subtitle>
       <p className="text-white animate-fade-up animate-ease-linear animate-delay-300">
         Desenvolvedor front-end com +4 anos de experiência, apaixonado por criar experiências digitais
         incríveis, estou sempre em busca de desafios e aprendizado
