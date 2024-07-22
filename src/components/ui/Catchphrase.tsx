@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FlipWords } from './ui/FlipWords'
+import { FlipWords } from './FlipWords'
 
 export const Catchphrase = () => {
   const words = ["lindas", "inovadoras", "impactantes", "modernas"];

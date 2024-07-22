@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import { SkillCard } from "./SkillCard";
-import { Subtitle } from "../Subtitle";
+import { Subtitle } from "../ui/Subtitle";
 
 export const Skills = () => {
 	const skillContainer = useRef(null);
@@ -14,6 +14,8 @@ export const Skills = () => {
 		"JavaScript",
 		"TypeScript",
 		"GraphQl",
+		"Git",
+		"Figma",
 	];
 
 	const container = {
@@ -40,7 +42,7 @@ export const Skills = () => {
 			<Subtitle>
 				Skils
 			</Subtitle>
-			<div className="flex gap-10">
+			<div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
 				{skills.map((skill, index) => (
 					<SkillCard name={skill} key={index} />
 				))}

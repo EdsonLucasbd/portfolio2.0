@@ -1,6 +1,7 @@
-import React from 'react'
+"use client"
 import { HoverEffect } from '../ui/card-hover-effect'
-import { Subtitle } from '../Subtitle'
+import { motion } from "framer-motion"
+import { Subtitle } from '../ui/Subtitle'
 
 export const Services = () => {
   const services = [
@@ -46,12 +47,23 @@ export const Services = () => {
     <div
       className="flex flex-col gap-10 items-center w-full h-full"
     >
-      <Subtitle>
+      <Subtitle animate>
         O que posso fazer por você:
       </Subtitle>
-      <div className="h-full w-full px-8 mx-auto">
+      <motion.div
+        className="h-full w-full px-8 mx-auto"
+        initial={{
+          opacity: 0,
+          scale: 0.5,
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        viewport={{ once: true }}
+      >
         <HoverEffect items={services} />
-      </div>
+      </motion.div>
     </div>
   )
 }

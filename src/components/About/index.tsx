@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import { motion } from "framer-motion"
-import { Subtitle } from '../Subtitle';
+import { Subtitle } from '../ui/Subtitle';
 
 export const About = () => {
   return (

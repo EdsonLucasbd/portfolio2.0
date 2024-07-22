@@ -6,7 +6,7 @@ import photo from "../../../public/portfolio-photo.webp";
 
 export const Hero = () => {
 	return (
-		<div className="flex items-center justify-center relative w-full h-fullbg-grid-small-white/[0.2]">
+		<div className="flex items-center justify-center relative w-full h-full bg-grid-small-white/[0.2]">
 			<div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 			<motion.span
 				initial={{
