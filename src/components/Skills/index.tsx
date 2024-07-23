@@ -1,21 +1,64 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { useRef } from "react";
-import { SkillCard } from "./SkillCard";
+import React, { useEffect, useRef, useState } from "react";
 import { Subtitle } from "../ui/Subtitle";
+import { SkillCard } from "./SkillCard";
+import { CanvasRevealEffect } from "../ui/canvas-reveal-effect";
+import Image from "next/image";
 
 export const Skills = () => {
 	const skillContainer = useRef(null);
 
 	const skills = [
-		"React",
-		"NextJs",
-		"Tailwind",
-		"JavaScript",
-		"TypeScript",
-		"GraphQl",
-		"Git",
-		"Figma",
+		{
+			name: "React",
+			icon: <Image src="/skills/react.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/react-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[56, 189, 248]],
+		},
+		{
+			name: "Next.Js",
+			icon: <Image src="/skills/nextjs.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/nextjs-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[255, 255, 255]],
+		},
+		{
+			name: "Tailwind",
+			icon: <Image src="/skills/tailwind.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/tailwind-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[56, 189, 248]],
+		},
+		{
+			name: "JavaScript",
+			icon: <Image src="/skills/javascript.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/javascript-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[240, 219, 79]],
+		},
+		{
+			name: "TypeScript",
+			icon: <Image src="/skills/typescript.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/typescript-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[49, 120, 198]],
+		},
+		{
+			name: "GraphQl",
+			icon: <Image src="/skills/graphql.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/graphql-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[255, 0, 152]],
+		},
+		{
+			name: "Git",
+			icon: <Image src="/skills/git.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/git-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[240, 80, 50]],
+		},
+		{
+			name: "Figma",
+			icon: <Image src="/skills/figma.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/figma-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[242, 78, 30], [162, 89, 255], [10, 207, 131]],
+		},
+
 	];
 
 	const container = {
@@ -42,9 +85,23 @@ export const Skills = () => {
 			<Subtitle>
 				Skils
 			</Subtitle>
-			<div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+			<div className="grid grid-cols-2 lg:grid-cols-4 gap-5 gap-y-0 lg:gap-10">
 				{skills.map((skill, index) => (
-					<SkillCard name={skill} key={index} />
+					<SkillCard
+						title={skill.name}
+						key={index}
+						icon={skill.icon}
+						colorfulIcon={skill.colorfulIcon}
+						className="shadow outline outline-1 outline-brand-lavender-gray/10 hover:outline-none 
+						transition-[outline] duration-300 ease-in-out"
+					>
+						<CanvasRevealEffect
+							animationSpeed={1.5}
+							containerClassName={`bg-transparent`}
+							colors={skill.color}
+							dotSize={1.5}
+						/>
+					</SkillCard>
 				))}
 			</div>
 		</motion.div>

@@ -6,8 +6,16 @@ import photo from "../../../public/portfolio-photo.webp";
 
 export const Hero = () => {
 	return (
-		<div className="flex items-center justify-center relative w-full h-full bg-grid-small-white/[0.2]">
-			<div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+		<div
+			className="flex flex-col lg:flex-row items-center justify-start lg:justify-center 
+			relative w-full h-full bg-grid-small-white/[0.2] gap-5 lg:gap-0 pt-10 lg:pt-0 lg:-mt-48"
+		>
+			<div
+				className="absolute pointer-events-none inset-0 flex items-center 
+				justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_40%,black)]
+				lg:[mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
+			>
+			</div>
 			<motion.span
 				initial={{
 					opacity: 0,
@@ -27,11 +35,11 @@ export const Hero = () => {
 					alt=""
 					id="photo"
 					aria-hidden
-					className="w-[400px] h-auto"
+					className="w-full lg:w-[400px] h-auto"
 				/>
 			</motion.span>
 			<motion.div
-				className="flex flex-col gap-2"
+				className="flex flex-col gap-2 text-center lg:text-left"
 				initial={{
 					opacity: 0,
 					x: 1 % 2 === 0 ? 50 : -50
@@ -52,7 +60,7 @@ export const Hero = () => {
 					Edson Lucas
 				</h1>
 				<p
-					className="text-2xl font-light
+					className="text-xl lg:text-2xl font-light
         animate-text bg-gradient-to-r from-white/5 via-white to-black 
         bg-opacity-70 bg-clip-text text-transparent"
 				>

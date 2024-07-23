@@ -44,7 +44,7 @@ export const NavbarMenu = ({ className }: { className?: string }) => {
           `flex w-full fixed top-0 inset-x-0 mx-auto border text-white 
           border-white/[0.2] bg-transparent backdrop-blur-md 
           shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] 
-          z-[5000] px-24 py-5  items-center justify-around space-x-4
+          z-[5000] px-10 md:px-24 py-5  items-center justify-around space-x-2 md:space-x-4
           [&_a:hover]:text-brand-pink`,
           className
         )}

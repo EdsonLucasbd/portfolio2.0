@@ -13,14 +13,14 @@ import { NavbarMenu } from "@/components/ui/NavbarMenu";
 export default function Home() {
   return (
     <main
-      className="flex min-h-screen flex-col items-center justify-between p-24 bg-black overflow-hidden"
+      className="flex min-h-screen flex-col items-center justify-between p-10 lg:p-24 bg-black overflow-hidden"
     >
       <NavbarMenu />
       <TracingBeam >
-        <section className="flex items-center justify-center w-full h-full" id="about">
+        <section className="flex items-center justify-center w-full h-screen">
           <Hero />
         </section>
-        <section className="flex h-full w-full mb-20">
+        <section className="flex h-full w-full mb-20" id="about">
           <About />
         </section>
         <section className="flex flex-col w-full h-full mt-10 mb-32" id="skills">

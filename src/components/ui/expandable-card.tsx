@@ -165,7 +165,7 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                   {card.title}
                 </motion.h3>
                 <motion.p
-                  layoutId={`description-${card.description}-${id}`}
+                  layoutId={`description-${card.title}-${card.description}-${id}`}
                   className="text-brand-lavender-gray/50 font-light text-center md:text-left text-base"
                 >
                   {card.description}

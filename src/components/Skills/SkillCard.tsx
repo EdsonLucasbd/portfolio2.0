@@ -1,87 +1,71 @@
-"use client";
-import Image from "next/image";
-import React, { useEffect, useRef } from "react";
-import Spotlight, { SpotlightCard } from "../ui/Spotlight";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
 
-interface IconProps {
-	name: string;
-	className?: string;
-	[key: string]: any;
-}
 
-interface SkillCardProps {
-	name: string;
-	className?: string;
-}
+export const SkillCard = ({
+  title,
+  icon,
+  colorfulIcon,
+  children,
+  className,
+}: {
+  title: string;
+  icon: React.ReactNode;
+  colorfulIcon: React.ReactNode;
+  children?: React.ReactNode;
+  className?: string;
+}) => {
+  const [hovered, setHovered] = React.useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className={cn(`border border-black/[0.2] group/canvas-card flex items-center 
+      justify-center mx-auto p-4 relative size-full rounded-lg overflow-hidden`, className)}
+    >
 
-const Icon = ({ name, className, ...props }: IconProps) => {
-	const iconName = name.toLowerCase();
-	return (
-		<Image
-			src={`/skills/${iconName}.svg`}
-			alt=""
-			aria-hidden
-			width={55}
-			height={55}
-			className="text-white"
-			{...props}
-		/>
-	);
-};
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="h-full w-full absolute inset-0"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-export const SkillCard = ({ name, className }: SkillCardProps) => {
-	const captureRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		const capture = captureRef.current;
-
-		if (!capture) return;
-
-		const overlay = capture.querySelector(
-			".glow-overlay",
-		) as HTMLElement | null;
-
-		const handleMouseMove = (event: MouseEvent) => {
-			const x = event.pageX - capture.offsetLeft;
-			const y = event.pageY - capture.offsetTop;
-
-			overlay?.style.setProperty("--glow-x", `${x}px`);
-			overlay?.style.setProperty("--glow-y", `${y}px`);
-			overlay?.style.setProperty("--glow-opacity", "1");
-		};
-
-		const handleMouseLeave = () => {
-			if (overlay) {
-				overlay.style.setProperty("--glow-opacity", "0");
-			}
-		};
-
-		capture.addEventListener("mousemove", handleMouseMove);
-		capture.addEventListener("mouseleave", handleMouseLeave);
-
-		return () => {
-			capture.removeEventListener("mousemove", handleMouseMove);
-			capture.removeEventListener("mouseleave", handleMouseLeave);
-		};
-	}, []);
-
-	return (
-		<Spotlight className="group">
-			<SpotlightCard>
-				<div
-					className="relative flex flex-col items-center justify-between 
-          bg-zinc-700/50 size-full 
-          p-5 rounded-[inherit] z-20 overflow-hidden"
-				>
-					<Icon name={name} />
-					<span
-						className="text-base bg-gradient-to-b from-white via-white to-white 
-                bg-opacity-70 bg-clip-text text-transparent glow:text-glow/[.15]"
-					>
-						{name}
-					</span>
-				</div>
-			</SpotlightCard>
-		</Spotlight>
-	);
+      <div className="relative z-20 flex flex-col items-center justify-center">
+        <div className="relative aspect-[104/42] w-[calc(104/16*1rem)] max-w-full 
+          translate-y-4 transition-transform duration-300 group-hover/canvas-card:translate-y-0 
+          group-focus/canvas-card:translate-y-0 no-hover:translate-y-0"
+        >
+          <div
+            className="absolute inset-0 h-full w-full opacity-0 transition-opacity 
+            duration-500 group-hover/canvas-card:opacity-100 group-focus/canvas-card:opacity-100 
+            flex items-center justify-center"
+            style={{ color: "transparent" }}
+          >
+            {icon}
+          </div>
+          <div
+            className="absolute inset-0 h-full w-full transition-opacity 
+            duration-500 group-hover/canvas-card:opacity-0 group-focus/canvas-card:opacity-0 
+            flex items-center justify-center"
+            style={{ color: "transparent" }}
+          >
+            {colorfulIcon}
+          </div>
+        </div>
+        <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 
+        relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white 
+        group-hover/canvas-card:-translate-y-2 transition duration-200"
+        >
+          {title}
+        </h2>
+      </div>
+    </div>
+  );
 };

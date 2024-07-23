@@ -6,7 +6,7 @@ import { Subtitle } from '../ui/Subtitle';
 export const About = () => {
   return (
     <motion.div
-      className="flex flex-col gap-5 w-1/2"
+      className="flex flex-col gap-5 w-full lg:w-1/2"
       initial={{
         opacity: 0,
         x: 0 % 2 === 0 ? 50 : -50
@@ -23,7 +23,7 @@ export const About = () => {
       <Subtitle className='text-start'>
         Um pouco sobre mim
       </Subtitle>
-      <p className="text-white animate-fade-up animate-ease-linear animate-delay-300">
+      <p className="text-white animate-fade-up animate-ease-linear animate-delay-300 text-balance">
         Desenvolvedor front-end com +4 anos de experiência, apaixonado por criar experiências digitais
         incríveis, estou sempre em busca de desafios e aprendizado
         constante. Tenho explorado frameworks modernos como React e Next.js,
