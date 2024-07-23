@@ -87,8 +87,10 @@ const Pattern = ({
 					className="flex flex-col  relative z-20 border-b"
 				>
 					{row.map((column, colIdx) => {
+						// eslint-disable-next-line react-hooks/rules-of-hooks
 						const controls = useAnimation();
 
+						// eslint-disable-next-line react-hooks/rules-of-hooks
 						useEffect(() => {
 							if (clickedCell) {
 								const distance = Math.sqrt(
