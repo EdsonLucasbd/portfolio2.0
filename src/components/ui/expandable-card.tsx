@@ -54,7 +54,7 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -70,7 +70,8 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="flex absolute top-20 lg:top-2 right-2 lg:hidden items-center 
+                justify-center bg-white rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -78,7 +79,9 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full lg:h-fit lg:max-h-[90%] 
+                flex flex-col bg-neutral-900 sm:rounded-3xl overflow-hidden
+                pt-20 lg:pt-0"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -87,7 +90,7 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                   height={500}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-auto sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-auto sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-center lg:object-top"
                 />
               </motion.div>
 
@@ -96,13 +99,13 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-neutral-700 dark:text-neutral-200 text-base"
+                      className="font-medium text-brand-pink text-base"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 text-base"
+                      className="text-brand-lavender-gray text-base"
                     >
                       {active.description}
                     </motion.p>
@@ -115,7 +118,7 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-brand-purple text-white"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -126,7 +129,10 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-300 text-xs md:text-sm lg:text-base 
+                    h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto 
+                    [mask:linear-gradient(to_bottom,white,white,transparent)] 
+                    [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -138,8 +144,9 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
           </div>
         ) : null}
       </AnimatePresence>
+      {/* thumbnails */}
       <ul className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 items-start gap-6">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
@@ -154,19 +161,19 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                   quality={70}
                   src={card.src}
                   alt={card.title}
-                  className="h-60 w-full rounded-lg object-cover object-top"
+                  className="lg:h-60 w-full rounded-lg object-cover object-top"
                 />
               </motion.div>
               <div className="flex justify-center items-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-brand-lavender-gray text-center md:text-left text-base"
+                  className="font-medium text-brand-pink text-center md:text-left text-base"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.title}-${card.description}-${id}`}
-                  className="text-brand-lavender-gray/50 font-light text-center md:text-left text-base"
+                  className="text-brand-lavender-gray font-light text-center md:text-left text-base"
                 >
                   {card.description}
                 </motion.p>

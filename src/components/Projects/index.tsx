@@ -140,7 +140,6 @@ export const Projects = () => {
         Projetos
       </motion.h2>
       <div className="h-full w-full">
-        {/* <LayoutGrid cards={projects} /> */}
         <ExpandableCard cards={projects} />
       </div>
     </motion.div>
