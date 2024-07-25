@@ -3,12 +3,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import photo from "../../../public/portfolio-photo.webp";
+import { useMediaQuery } from "react-responsive";
 
 export const Hero = () => {
+	const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
 	return (
-		<div
+		<motion.div
 			className="flex flex-col lg:flex-row items-center justify-start lg:justify-center 
-			relative w-full h-full bg-grid-small-white/[0.2] gap-5 lg:gap-0 pt-10 lg:pt-0 lg:-mt-48"
+			relative w-full h-full bg-grid-small-white/[0.2] gap-2 lg:gap-0 pt-10 lg:pt-0 lg:-mt-48"
 		>
 			<div
 				className="absolute pointer-events-none inset-0 flex items-center 
@@ -17,18 +20,13 @@ export const Hero = () => {
 			>
 			</div>
 			<motion.span
-				initial={{
-					opacity: 0,
-					x: 0 % 2 === 0 ? 50 : -50
+				initial={{ opacity: 0, scale: 0.5 }}
+				animate={{ opacity: 1, scale: 1 }}
+				transition={{
+					duration: 0.8,
+					delay: 0.5,
+					ease: [0, 0.71, 0.2, 1.01]
 				}}
-				whileInView={{
-					opacity: 1,
-					x: 0,
-					transition: {
-						duration: 1
-					}
-				}}
-				viewport={{ once: true }}
 			>
 				<Image
 					src={photo}
@@ -42,13 +40,16 @@ export const Hero = () => {
 				className="flex flex-col gap-2 text-center lg:text-left"
 				initial={{
 					opacity: 0,
-					x: 1 % 2 === 0 ? 50 : -50
+					x: isMobile ? 0 : -70,
+					y: isMobile ? -70 : 0
 				}}
 				whileInView={{
 					opacity: 1,
 					x: 0,
+					y: isMobile ? 0 : 0,
 					transition: {
-						duration: 1
+						duration: 1,
+						delay: 0.8
 					}
 				}}
 				viewport={{ once: true }}
@@ -67,6 +68,6 @@ export const Hero = () => {
 					FrondEnd Developer
 				</p>
 			</motion.div>
-		</div>
+		</motion.div>
 	);
 };
