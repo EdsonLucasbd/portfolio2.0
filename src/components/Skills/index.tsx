@@ -92,7 +92,7 @@ export const Skills = () => {
 						key={index}
 						icon={skill.icon}
 						colorfulIcon={skill.colorfulIcon}
-						className="shadow outline outline-1 outline-brand-lavender-gray/10 hover:outline-none 
+						className="shadow outline outline-1 outline-brand-lavender-gray/15 hover:outline-none 
 						transition-[outline] duration-300 ease-in-out"
 					>
 						<CanvasRevealEffect
