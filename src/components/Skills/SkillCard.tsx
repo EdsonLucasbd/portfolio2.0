@@ -17,8 +17,14 @@ export const SkillCard = ({
   className?: string;
 }) => {
   const [hovered, setHovered] = React.useState(false);
+  const item = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 100 },
+  }
+
   return (
-    <div
+    <motion.div
+      variants={item}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(`border border-black/[0.2] group/canvas-card flex items-center 
@@ -66,6 +72,6 @@ export const SkillCard = ({
           {title}
         </h2>
       </div>
-    </div>
+    </motion.div>
   );
 };

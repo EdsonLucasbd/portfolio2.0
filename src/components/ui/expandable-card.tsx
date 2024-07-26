@@ -40,6 +40,11 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
 
   useOutsideClick(ref, () => setActive(null));
 
+  const item = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  }
+
   return (
     <>
       <AnimatePresence>
@@ -148,6 +153,7 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
       <ul className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 items-start gap-6">
         {cards.map((card) => (
           <motion.div
+            variants={item}
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}

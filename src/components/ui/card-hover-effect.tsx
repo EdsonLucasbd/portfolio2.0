@@ -17,6 +17,12 @@ export const HoverEffect = ({
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+
+  const itemObject = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 0 },
+  }
+
   return (
     <div
       className={cn(
@@ -25,12 +31,13 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <Link
+        <motion.a
           href={item?.link}
           key={item?.link}
           className="relative group block p-2 size-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
+          variants={itemObject}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
@@ -53,7 +60,7 @@ export const HoverEffect = ({
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
-        </Link>
+        </motion.a>
       ))}
     </div>
   );
