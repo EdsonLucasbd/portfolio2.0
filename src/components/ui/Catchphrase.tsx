@@ -21,11 +21,13 @@ export const Catchphrase = () => {
       }}
       viewport={{ once: true }}
       className="text-4xl mx-auto font-normal bg-gradient-to-b from-white via-white to-white 
-      bg-opacity-70 bg-clip-text text-transparent text-center lg:text-start"
+      bg-opacity-70 bg-clip-text text-transparent text-center lg:text-start relative"
     >
-      Construindo aplicações
-      <FlipWords words={words} className="text-brand-purple font-bold" /> <br />
-      com tecnologia de ponta.
+      <p>
+        Construindo aplicações
+        <FlipWords words={words} className="text-brand-purple font-bold" /> <br />
+        com tecnologia de ponta.
+      </p>
     </motion.div>
   )
 }

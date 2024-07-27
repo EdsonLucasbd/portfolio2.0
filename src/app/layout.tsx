@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/components/ui/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -21,7 +22,10 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="scroll-smooth">
 			<body className={`${inter.className} ${bricolageGrotesque.variable}`}>
-				{children}
+				<div>
+					{children}
+					<Footer />
+				</div>
 			</body>
 		</html>
 	);
