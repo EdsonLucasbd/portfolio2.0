@@ -1,11 +1,10 @@
 "use client";
 import { cn } from '@/lib/utils';
 import { AnimatePresence, useScroll, motion, useMotionValueEvent } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { GitHubLogoIcon, HamburgerMenuIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './dropdown-menu';
 
 export const NavbarMenu = ({ className }: { className?: string }) => {
   const { scrollYProgress } = useScroll();
@@ -68,15 +67,27 @@ export const NavbarMenu = ({ className }: { className?: string }) => {
           <DropdownMenuTrigger className='lg:hidden'>
             <HamburgerMenuIcon />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className='z-[100]'>
-            <DropdownMenuItem>
-              <Link href="https://www.linkedin.com/in/edson-lucas-bd/" aria-label='Acessar meu perfil no LinkedIn' target='_blank' rel='noreferrer'>
-                <LinkedInLogoIcon className="w-6 h-6" aria-hidden />
+          <DropdownMenuContent className='z-[5005] border-white/[0.2] bg-transparent backdrop-blur-md 
+          shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]
+          text-white space-y-3'>
+            <DropdownMenuItem className='flex items-center justify-center focus:bg-brand-lavender-gray'>
+              <Link
+                href="https://www.linkedin.com/in/edson-lucas-bd/"
+                aria-label='Acessar meu perfil no LinkedIn'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <LinkedInLogoIcon className="size-7" aria-hidden />
               </Link>
             </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link href="https://github.com/EdsonLucasbd" aria-label='Acessar meu perfil no GitHub' target='_blank' rel='noreferrer' >
-                <GitHubLogoIcon className="w-6 h-6" aria-hidden />
+            <DropdownMenuItem className='flex items-center justify-center focus:bg-brand-lavender-gray'>
+              <Link
+                href="https://github.com/EdsonLucasbd"
+                aria-label='Acessar meu perfil no GitHub'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <GitHubLogoIcon className="size-7" aria-hidden />
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
