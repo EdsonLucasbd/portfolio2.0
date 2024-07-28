@@ -154,6 +154,14 @@ const config = {
             "transform": "scale(.5)"
           }
         },
+        shimmer: {
+          from: {
+            "backgroundPosition": "0 0"
+          },
+          to: {
+            "backgroundPosition": "-200% 0"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -164,6 +172,7 @@ const config = {
         "zoom-in": "zoom-in 0.6s forwards",
         "zoom-out": "zoom-out 0.6s forwards",
         heart: 'heart 1.5s ease-in-out infinite',
+        shimmer: "shimmer 2s linear infinite",
       },
     },
   },

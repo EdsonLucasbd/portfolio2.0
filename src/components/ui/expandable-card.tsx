@@ -116,17 +116,28 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                     </motion.p>
                   </div>
 
-                  <motion.a
+                  <motion.button
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-brand-purple text-white"
+                    className="inline-flex h-12 animate-shimmer items-center 
+                      justify-center border border-brand-purple 
+                      bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
+                      bg-[length:200%_100%]
+                      transition-colors focus:outline-none focus:ring-2 
+                      focus:ring-slate-400 focus:ring-offset-2 
+                      focus:ring-offset-slate-50 px-4 py-3 text-sm 
+                      rounded-full font-bold text-white"
                   >
-                    {active.ctaText}
-                  </motion.a>
+                    <a
+                      href={active.ctaLink}
+                      target="_blank"
+                      className="p-3 w-full inline-flex"
+                    >
+                      {active.ctaText}
+                    </a>
+                  </motion.button>
                 </div>
                 <div className="pt-4 relative px-4">
                   <motion.div
