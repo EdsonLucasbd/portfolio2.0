@@ -97,6 +97,17 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        heart: {
+          '0%': {
+            'transform': 'scale(1)',
+          },
+          '50%': {
+            'transform': 'scale(1.3)',
+          },
+          '100%': {
+            'transform': 'scale(1)',
+          },
+        },
         text: {
           '0%, 100%': {
             'background-size': '200% 200%',
@@ -152,6 +163,7 @@ const config = {
         "fade-out": "fade-out 0.6s ease-out",
         "zoom-in": "zoom-in 0.6s forwards",
         "zoom-out": "zoom-out 0.6s forwards",
+        heart: 'heart 1.5s ease-in-out infinite',
       },
     },
   },
