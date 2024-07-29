@@ -5,6 +5,7 @@ import { Subtitle } from "../ui/Subtitle";
 import { SkillCard } from "./SkillCard";
 import { CanvasRevealEffect } from "../ui/canvas-reveal-effect";
 import Image from "next/image";
+import { AnimatedContainer } from "../ui/AnimatedContainer";
 
 export const Skills = () => {
 	const skillContainer = useRef(null);
@@ -74,12 +75,8 @@ export const Skills = () => {
 	};
 
 	return (
-		<motion.div
-			className="flex flex-col flex-wrap gap-10 items-center justify-center"
-			variants={container}
-			initial="hidden"
-			whileInView="visible"
-			viewport={{ once: true }}
+		<AnimatedContainer
+			className=" mt-10 mb-20 lg:mb-32"
 			ref={skillContainer}
 		>
 			<Subtitle animate>
@@ -105,6 +102,6 @@ export const Skills = () => {
 					</SkillCard>
 				))}
 			</div>
-		</motion.div>
+		</AnimatedContainer>
 	);
 };

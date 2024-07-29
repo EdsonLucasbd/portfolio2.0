@@ -3,6 +3,8 @@ import React, { useRef } from "react";
 
 import { motion } from "framer-motion";
 import { ExpandableCard } from "../ui/expandable-card";
+import { Subtitle } from "../ui/Subtitle";
+import { AnimatedContainer } from "../ui/AnimatedContainer";
 
 export const Projects = () => {
   const projectsContainer = useRef(null);
@@ -112,49 +114,15 @@ export const Projects = () => {
     },
   ];
 
-  const container = {
-    hidden: { opacity: 0, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      className="flex flex-col gap-10 items-center w-full h-full"
-      variants={container}
-      initial="hidden"
-      whileInView="visible"
-      ref={projectsContainer}
-      viewport={{ once: true }}
-    >
-      <motion.h2
-        // initial={{
-        //   opacity: 0,
-        //   x: 1 % 2 === 0 ? 50 : -50
-        // }}
-        // whileInView={{
-        //   opacity: 1,
-        //   x: 0,
-        //   transition: {
-        //     duration: 1
-        //   }
-        // }}
-        // viewport={{ once: true }}
-        className="text-4xl text-center font-sans font-semibold bg-gradient-to-b from-white via-white to-white 
-            bg-opacity-70 bg-clip-text text-transparent"
-      >
+    <AnimatedContainer ref={projectsContainer}>
+      <Subtitle animate>
         Projetos
-      </motion.h2>
+      </Subtitle>
       <div className="h-full w-full"
       >
         <ExpandableCard cards={projects} />
       </div>
-    </motion.div>
+    </AnimatedContainer>
   );
 };

@@ -59,7 +59,7 @@ export const Services = () => {
 
   return (
     <motion.div
-      className="flex flex-col gap-10 items-center w-full h-full"
+      className="flex flex-col gap-10 items-center lg:w-full lg:h-full"
       variants={container}
       initial="hidden"
       whileInView="visible"

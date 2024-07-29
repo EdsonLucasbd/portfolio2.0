@@ -23,24 +23,23 @@ export default function Home() {
         <section className="flex h-full w-full mb-20" id="about">
           <About />
         </section>
-        <section className="flex flex-col w-full h-full mt-10 mb-32" id="skills">
+        <section className="flex flex-col w-full h-full" id="skills">
           <Skills />
         </section>
-
-        <section className="flex flex-col w-full h-full mb-32">
+        <section className="flex flex-col w-full h-full mb-20 lg:mb-32">
           <Catchphrase />
         </section>
 
-        <section className="flex flex-col items-center justify-center h-full w-full" id="projects">
+        <section className="flex flex-col items-center justify-center h-full w-full mt-10 mb-20 lg:mb-32" id="projects">
           <Projects />
         </section>
 
-        <section className="flex relative mt-10 flex-col items-center justify-center h-full w-full">
+        <section className="flex relative my-10 flex-col items-center justify-center h-full w-full">
           <ParallaxText baseVelocity={-2}> • Transformar • Inspirar • Impactar </ParallaxText>
           <ParallaxText baseVelocity={2}> • Moderno • Responsivo • Bonito </ParallaxText>
         </section>
 
-        <section className="flex w-full h-full mt-10 mb-32" id="services">
+        <section className="flex w-full h-full mb-32" id="services">
           <Services />
         </section>
       </TracingBeam>
