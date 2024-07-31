@@ -128,7 +128,7 @@ export function ExpandableCard({ cards }: { cards: CardData[] }) {
                       transition-colors focus:outline-none focus:ring-2 
                       focus:ring-slate-400 focus:ring-offset-2 
                       focus:ring-offset-slate-50 px-4 py-3 text-sm 
-                      rounded-full font-bold text-white"
+                      rounded-full font-bold text-white hover:bg-[linear-gradient(110deg,#1a1c22,45%,#3b4654,55%,#1a1c22)]"
                   >
                     <a
                       href={active.ctaLink}

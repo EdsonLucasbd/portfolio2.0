@@ -48,6 +48,18 @@ export const Skills = () => {
 			color: [[255, 0, 152]],
 		},
 		{
+			name: "Apollo",
+			icon: <Image src="/skills/apollo.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/apollo-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[17, 43, 73], [255, 255, 255]],
+		},
+		{
+			name: "React Query",
+			icon: <Image src="/skills/react-query.svg" alt="" width={55} height={55} aria-hidden />,
+			colorfulIcon: <Image src="/skills/react-query-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			color: [[0, 67, 91], [255, 65, 84], [255, 217, 76]],
+		},
+		{
 			name: "Git",
 			icon: <Image src="/skills/git.svg" alt="" width={55} height={55} aria-hidden />,
 			colorfulIcon: <Image src="/skills/git-outline.svg" alt="" width={55} height={55} aria-hidden />,
@@ -59,7 +71,6 @@ export const Skills = () => {
 			colorfulIcon: <Image src="/skills/figma-outline.svg" alt="" width={55} height={55} aria-hidden />,
 			color: [[242, 78, 30], [162, 89, 255], [10, 207, 131]],
 		},
-
 	];
 
 	const container = {

@@ -10,7 +10,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-	title: "Edson Lucas",
+	title: "Edson Lucas | Portfólio",
 	description: "Desenvolvedor FrontEnd",
 };
 
