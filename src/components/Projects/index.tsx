@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 
-import { motion } from "framer-motion";
 import { ExpandableCard } from "../ui/expandable-card";
 import { Subtitle } from "../ui/Subtitle";
 import { AnimatedContainer } from "../ui/AnimatedContainer";
@@ -19,10 +18,7 @@ export const Projects = () => {
       content: () => {
         return (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-            reprehenderit, architecto in natus maxime eaque
-            voluptatem amet quibusdam vel ullam eum corrupti repudiandae
-            itaque porro voluptates sit ea incidunt doloribus!
+            E-commerce fictício para venda de canecas e camisetas.
           </p>
         );
       },
@@ -36,10 +32,7 @@ export const Projects = () => {
       content: () => {
         return (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-            reprehenderit, architecto in natus maxime eaque
-            voluptatem amet quibusdam vel ullam eum corrupti repudiandae
-            itaque porro voluptates sit ea incidunt doloribus!
+            Landing page para o info produto da LNS assessoria e treinamentos.
           </p>
         );
       },
@@ -53,10 +46,7 @@ export const Projects = () => {
       content: () => {
         return (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-            reprehenderit, architecto in natus maxime eaque
-            voluptatem amet quibusdam vel ullam eum corrupti repudiandae
-            itaque porro voluptates sit ea incidunt doloribus!
+            Um dos meus inumeros portfolios...
           </p>
         );
       },
@@ -70,10 +60,7 @@ export const Projects = () => {
       content: () => {
         return (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-            reprehenderit, architecto in natus maxime eaque
-            voluptatem amet quibusdam vel ullam eum corrupti repudiandae
-            itaque porro voluptates sit ea incidunt doloribus!
+            Página institucional para a LNS assessoria e treinamentos.
           </p>
         );
       },
@@ -87,10 +74,8 @@ export const Projects = () => {
       content: () => {
         return (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-            reprehenderit, architecto in natus maxime eaque
-            voluptatem amet quibusdam vel ullam eum corrupti repudiandae
-            itaque porro voluptates sit ea incidunt doloribus!
+            Mapa mundial com alguns dos estádios mais icônicos do futebol.
+            Ainda cadastrando alguns estádios...
           </p>
         );
       },
@@ -104,10 +89,7 @@ export const Projects = () => {
       content: () => {
         return (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
-            reprehenderit, architecto in natus maxime eaque
-            voluptatem amet quibusdam vel ullam eum corrupti repudiandae
-            itaque porro voluptates sit ea incidunt doloribus!
+            Um gerador de QrCode para compartilhar links, links de rede sociais e muito mais
           </p>
         );
       },
