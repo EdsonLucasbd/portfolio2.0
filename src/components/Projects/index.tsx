@@ -53,6 +53,20 @@ export const Projects = () => {
     },
     {
       description: "Site",
+      title: "Bichos App",
+      src: "/projects/bichos-app.webp",
+      ctaText: "Acessar projeto",
+      ctaLink: "https://www.bichos.app/",
+      content: () => {
+        return (
+          <p>
+            Projeto freelancer que consiste num site que traz os melhores preços de produtos para pets em várias lojas.
+          </p>
+        );
+      },
+    },
+    {
+      description: "Site",
       title: "LNS Site",
       src: "/projects/lns_site.webp",
       ctaText: "Acessar projeto",
