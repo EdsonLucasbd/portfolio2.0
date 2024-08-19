@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils';
 
-export const AnimatedContainer = ({ children, ref, className }: {
-  ref: React.RefObject<HTMLDivElement>,
+interface AnimatedContainerProps {
   children: React.ReactNode,
   className?: string
-}) => {
+}
+
+export const AnimatedContainer = forwardRef<HTMLDivElement, AnimatedContainerProps>((props, ref) => {
+  const { children, className } = props;
+
   const container = {
     hidden: { opacity: 0, scale: 0 },
     visible: {
@@ -31,4 +34,6 @@ export const AnimatedContainer = ({ children, ref, className }: {
       {children}
     </motion.div>
   )
-}
+})
+
+AnimatedContainer.displayName = "AnimatedContainer";

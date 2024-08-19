@@ -15,7 +15,7 @@ export const Projects = () => {
       title: "EL Store",
       src: "/projects/el_store.webp",
       ctaText: "Acessar projeto",
-      ctaLink: "#",
+      ctaLink: "https://el-store-gray.vercel.app/",
       content: () => {
         return (
           <p>
@@ -32,7 +32,7 @@ export const Projects = () => {
       title: "AV Expert",
       src: "/projects/av_expert.webp",
       ctaText: "Acessar projeto",
-      ctaLink: "#",
+      ctaLink: "https://av-expert.lnsassessoria.com.br/",
       content: () => {
         return (
           <p>
@@ -49,7 +49,7 @@ export const Projects = () => {
       title: "Portfolio antigo",
       src: "/projects/old_portfolio.webp",
       ctaText: "Acessar projeto",
-      ctaLink: "#",
+      ctaLink: "https://oedsonlucas.com.br/",
       content: () => {
         return (
           <p>
@@ -66,7 +66,7 @@ export const Projects = () => {
       title: "LNS Site",
       src: "/projects/lns_site.webp",
       ctaText: "Acessar projeto",
-      ctaLink: "#",
+      ctaLink: "https://www.lnsassessoria.com.br/",
       content: () => {
         return (
           <p>
@@ -83,7 +83,7 @@ export const Projects = () => {
       title: "Amazing Stadiums",
       src: "/projects/amazing_stadiums.webp",
       ctaText: "Acessar projeto",
-      ctaLink: "#",
+      ctaLink: "https://amazing-stadiums.vercel.app/",
       content: () => {
         return (
           <p>
@@ -100,7 +100,7 @@ export const Projects = () => {
       title: "QR Code Generator",
       src: "/projects/qrcode_generator.webp",
       ctaText: "Acessar projeto",
-      ctaLink: "#",
+      ctaLink: "/qr-code",
       content: () => {
         return (
           <p>
