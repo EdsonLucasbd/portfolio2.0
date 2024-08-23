@@ -13,7 +13,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
@@ -26,7 +26,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -165,29 +165,47 @@ const config = {
             "backgroundPosition": "-200% 0"
           }
         },
+        in: {
+          "0%": {
+            "transform": "translateY(20px)"
+          },
+          "100%": {
+            "transform": "translateY(0)"
+          }
+        },
+        out: {
+          "0%": {
+            "transform": "translateX(0)"
+          },
+          "100%": {
+            "transform": "translateX(20px)"
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        text: 'text 8s ease-in-out infinite',
+        text: "text 6s ease-in-out infinite",
         "fade-in": "fade-in 0.6s ease-in",
         "fade-out": "fade-out 0.6s ease-out",
         "zoom-in": "zoom-in 0.6s forwards",
         "zoom-out": "zoom-out 0.6s forwards",
-        heart: 'heart 1.5s ease-in-out infinite',
+        heart: "heart 1.5s ease-in-out infinite",
         shimmer: "shimmer 2s linear infinite",
+        in: "in 0.3s ease-out",
+        out: "out 0.3s ease-out"
       },
     },
   },
   plugins: [
     plugin(
-      function({addVariant}:{
+      function ({ addVariant }: {
         addVariant: (variant: string, classes: string) => void;
       }) {
         addVariant("glow", ".glow-capture .glow-overlay &")
       },
       {
-        theme:{
+        theme: {
           extend: {
             colors: {
               glow: "color-mix(in srgb, var(--glow-color) calc(<alpha-value> * 100%), transparent)",

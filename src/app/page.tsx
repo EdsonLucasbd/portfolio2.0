@@ -9,6 +9,7 @@ import { ParallaxText } from "@/components/ui/ParalaxText";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Services } from "@/components/Services/intex";
 import { NavbarMenu } from "@/components/ui/NavbarMenu";
+import { ContactForm } from "@/components/ui/contact-form";
 
 export default function Home() {
   return (
@@ -41,6 +42,10 @@ export default function Home() {
 
         <section className="flex w-full h-full mb-32" id="services">
           <Services />
+        </section>
+
+        <section className="flex flex-col items-center justify-center h-full w-full">
+          <ContactForm />
         </section>
       </TracingBeam>
     </main>

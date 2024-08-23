@@ -67,7 +67,7 @@ export const SkillCard = ({
         </div>
         <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 
         relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white 
-        group-hover/canvas-card:-translate-y-2 transition duration-200"
+        group-hover/canvas-card:-translate-y-2 transition duration-200 text-center"
         >
           {title}
         </h2>
