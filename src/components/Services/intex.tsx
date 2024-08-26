@@ -10,37 +10,45 @@ export const Services = () => {
     {
       title: "Sites",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis",
+        `Desenvolvo sites responsivos e otimizados para SEO, garantindo uma 
+        presença online que reflete a identidade da sua marca e 
+        proporciona uma excelente experiência ao usuário.`,
       link: "#",
     },
     {
       title: "Aplicativos",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis",
+        `Crio aplicativos móveis e web modernos, focados em usabilidade e 
+        desempenho, para atender às necessidades do seu negócio.`,
       link: "#",
     },
     {
       title: "Landing Pages",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis",
+        `Desenvolvo landing pages eficientes com design atraente, 
+        projetadas para converter visitantes em clientes.`,
       link: "#",
     },
     {
       title: "Sistemas",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis",
+        `Ofereço soluções completas em desenvolvimento de sistemas 
+        personalizados, desde a concepção até a implementação, 
+        para automatizar processos e melhorar a eficiência do seu negócio.`,
       link: "#",
     },
     {
       title: "SAAS",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis",
+        `Construo plataformas SAAS escaláveis e seguras, com foco em oferecer 
+        funcionalidades robustas e uma interface intuitiva.`,
       link: "#",
     },
     {
       title: "Blogs",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis",
+        `Desenvolvo blogs dinâmicos e fáceis de gerenciar, com design moderno e 
+        integração com ferramentas de SEO para maximizar o alcance do seu conteúdo.`,
       link: "#",
     },
   ]

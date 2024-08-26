@@ -17,12 +17,12 @@ const phoneRegex = /^\(?[1-9]{2}\)? ?9?[6-9][0-9]{3}-?[0-9]{4}$/
 
 const formSchema = z.object({
   customerName: z.string().min(1).max(30),
-  customerEmail: z.string().email("Please enter a valid email"),
+  customerEmail: z.string().email("Por favor insira um email valido"),
   customerPhone: z.string().regex(phoneRegex, {
     message: "Número de celular inválido. O formato deve ser (99) 99999-9999 ou similar.",
   }),
-  customerRequest: z.string().min(1, { message: "Please select an option" }),
-  message: z.string().min(3, { message: "Please enter a message" }).max(500),
+  customerRequest: z.string().min(1, { message: "Por favor escolha uma opção" }),
+  message: z.string().min(3, { message: "Por favor, descreva o que você precisa" }).max(500),
 })
 
 export const ContactForm = () => {
@@ -81,6 +81,7 @@ export const ContactForm = () => {
   return (
     <div className='flex flex-col max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 
       md:p-8 border border-white/[0.2] bg-black gap-4'
+      id='contact'
     >
       <h3 className='font-bold text-white text-2xl'>Entre em contato comigo</h3>
       <Form {...form}>
@@ -159,7 +160,7 @@ export const ContactForm = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='text-white'>Message</FormLabel>
+                <FormLabel className='text-white'>Mensagem</FormLabel>
                 <FormControl>
                   <Textarea className='flex h-10 w-full border-none bg-brand-martinique text-white rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
                     file:text-sm file:font-medium placeholder:text-neutral-400 dark:placeholder-text-neutral-600 

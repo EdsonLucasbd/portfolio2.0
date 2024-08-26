@@ -165,22 +165,22 @@ const config = {
             "backgroundPosition": "-200% 0"
           }
         },
-        in: {
-          "0%": {
-            "transform": "translateY(20px)"
-          },
-          "100%": {
-            "transform": "translateY(0)"
-          }
-        },
-        out: {
-          "0%": {
-            "transform": "translateX(0)"
-          },
-          "100%": {
-            "transform": "translateX(20px)"
-          }
-        }
+        // in: {
+        //   "0%": {
+        //     "transform": "translateY(20px)"
+        //   },
+        //   "100%": {
+        //     "transform": "translateY(0)"
+        //   }
+        // },
+        // out: {
+        //   "0%": {
+        //     "transform": "translateX(0)"
+        //   },
+        //   "100%": {
+        //     "transform": "translateX(20px)"
+        //   }
+        // }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -192,8 +192,8 @@ const config = {
         "zoom-out": "zoom-out 0.6s forwards",
         heart: "heart 1.5s ease-in-out infinite",
         shimmer: "shimmer 2s linear infinite",
-        in: "in 0.3s ease-out",
-        out: "out 0.3s ease-out"
+        // in: "in 0.3s ease-out",
+        // out: "out 0.3s ease-out"
       },
     },
   },

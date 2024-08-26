@@ -58,7 +58,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            <CardDescription className="text-pretty">{item.description}</CardDescription>
           </Card>
         </motion.a>
       ))}
