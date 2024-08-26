@@ -4,8 +4,13 @@ import { motion } from "framer-motion"
 import { Subtitle } from '../ui/Subtitle'
 import { useRef } from 'react'
 
-export const Services = () => {
+interface ServicesProps {
+  isVisible: boolean
+}
+
+export const Services = ({ isVisible }: ServicesProps) => {
   const servicesRef = useRef(null)
+
   const services = [
     {
       title: "Sites",
@@ -69,9 +74,7 @@ export const Services = () => {
     <motion.div
       className="flex flex-col gap-10 items-center lg:w-full lg:h-full"
       variants={container}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+      animate={isVisible ? "visible" : "hidden"}
       ref={servicesRef}
     >
       <Subtitle animate>
@@ -79,15 +82,16 @@ export const Services = () => {
       </Subtitle>
       <motion.div
         className="h-full w-full px-8 mx-auto"
-        initial={{
-          opacity: 0,
-          scale: 0.5,
-        }}
-        whileInView={{
-          opacity: 1,
-          scale: 1,
-        }}
-        viewport={{ once: true }}
+        // initial={{
+        //   opacity: 0,
+        //   scale: 0.5,
+        // }}
+        // whileInView={{
+        //   opacity: 1,
+        //   scale: 1,
+        // }}
+        animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+      // viewport={{ once: true }}
       >
         <HoverEffect items={services} />
       </motion.div>

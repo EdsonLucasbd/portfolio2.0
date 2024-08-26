@@ -33,7 +33,7 @@ export const HoverEffect = ({
       {items.map((item, idx) => (
         <motion.a
           href={item?.link}
-          key={item?.link}
+          key={item?.title}
           className="relative group block p-2 size-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}

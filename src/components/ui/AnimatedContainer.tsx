@@ -5,10 +5,11 @@ import { cn } from '@/lib/utils';
 interface AnimatedContainerProps {
   children: React.ReactNode,
   className?: string
+  isInView?: boolean
 }
 
 export const AnimatedContainer = forwardRef<HTMLDivElement, AnimatedContainerProps>((props, ref) => {
-  const { children, className } = props;
+  const { children, className, isInView } = props;
 
   const container = {
     hidden: { opacity: 0, scale: 0 },
@@ -26,10 +27,9 @@ export const AnimatedContainer = forwardRef<HTMLDivElement, AnimatedContainerPro
     <motion.div
       className={cn("flex flex-col flex-wrap gap-10 items-center", className)}
       variants={container}
-      initial="hidden"
-      whileInView="visible"
+      animate={isInView ? "visible" : "hidden"}
       ref={ref}
-      viewport={{ amount: 0.1, once: true }}
+      id='teste-id'
     >
       {children}
     </motion.div>
