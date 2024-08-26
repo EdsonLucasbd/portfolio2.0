@@ -237,6 +237,7 @@ const config = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
+    require("tailwindcss-animate")
   ],
 } satisfies Config
 
