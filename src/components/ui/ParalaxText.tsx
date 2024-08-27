@@ -52,8 +52,13 @@ export function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   });
 
   return (
-    <div className="flex w-full tracking-[-.125rem] m-0 whitespace-nowrap flex-nowrap text-white [&_span]:block [&_span]:mr-[1.875rem]">
-      <motion.div className={`flex font-semibold uppercase text-[4rem] whitespace-nowrap flex-nowrap ${anton.className}`} style={{ x }}>
+    <div className="flex w-full tracking-[-.125rem] m-0 whitespace-nowrap 
+      flex-nowrap [&_span]:block [&_span]:mr-[1.875rem]">
+      <motion.div className={`flex font-semibold uppercase text-[4rem] 
+          whitespace-nowrap flex-nowrap ${anton.className}
+          [mask:linear-gradient(to_bottom,white,white,transparent)] text-white`}
+        style={{ x }}
+      >
         <span>{children} </span>
         <span>{children} </span>
         <span>{children} </span>
