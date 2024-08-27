@@ -3,7 +3,6 @@ import React, { forwardRef } from "react";
 import { Subtitle } from "../ui/Subtitle";
 import { SkillCard } from "./SkillCard";
 import { CanvasRevealEffect } from "../ui/canvas-reveal-effect";
-import Image from "next/image";
 import { AnimatedContainer } from "../ui/AnimatedContainer";
 import { RiReactjsFill } from "react-icons/ri";
 import { TbBrandNextjs } from "react-icons/tb";
