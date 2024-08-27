@@ -54,7 +54,7 @@ export const SkillCard = ({
             flex items-center justify-center"
             style={{ color: "transparent" }}
           >
-            {icon}
+            {colorfulIcon}
           </div>
           <div
             className="absolute inset-0 h-full w-full transition-opacity 
@@ -62,7 +62,7 @@ export const SkillCard = ({
             flex items-center justify-center"
             style={{ color: "transparent" }}
           >
-            {colorfulIcon}
+            {icon}
           </div>
         </div>
         <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 

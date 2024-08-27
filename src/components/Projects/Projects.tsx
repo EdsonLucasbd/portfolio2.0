@@ -78,9 +78,18 @@ export const Projects = forwardRef<HTMLDivElement, ProjectProps>((props, ref) =>
       ctaLink: "https://www.lnsassessoria.com.br/",
       content: () => {
         return (
-          <p>
-            Página institucional para a LNS assessoria e treinamentos.
-          </p>
+          <div className="flex flex-col gap-2 w-full">
+            <p>
+              Página institucional para a LNS assessoria e treinamentos.
+            </p>
+            <p>Principais tecnologias:</p>
+            <ul className="flex w-full gap-2 items-center even:[&_li]:before:content-['•'] 
+              even:[&_li]:before:mr-2"
+            >
+              <li>Next.js</li>
+              <li>GraphQL</li>
+            </ul>
+          </div>
         );
       },
     },
@@ -92,10 +101,21 @@ export const Projects = forwardRef<HTMLDivElement, ProjectProps>((props, ref) =>
       ctaLink: "https://amazing-stadiums.vercel.app/",
       content: () => {
         return (
-          <p>
-            Mapa mundial com alguns dos estádios mais icônicos do futebol.
-            Ainda cadastrando alguns estádios...
-          </p>
+          <div className="flex flex-col gap-2 w-full">
+            <p>
+              Mapa mundial com alguns dos estádios mais icônicos do futebol.
+              Ainda cadastrando alguns estádios...
+            </p>
+            <p>Principais tecnologias:</p>
+            <ul className="flex w-full gap-2 items-center even:[&_li]:before:content-['•'] 
+                even:[&_li]:after:content-['•'] even:[&_li]:after:ml-2 even:[&_li]:before:mr-2 last:[&_li]:after:hidden"
+            >
+              <li>Next.js</li>
+              <li>GraphQL</li>
+              <li>Leaflet</li>
+              <li>Hygraph</li>
+            </ul>
+          </div>
         );
       },
     },
@@ -107,9 +127,23 @@ export const Projects = forwardRef<HTMLDivElement, ProjectProps>((props, ref) =>
       ctaLink: "/qr-code",
       content: () => {
         return (
-          <p>
-            Um gerador de QrCode para compartilhar links, links de rede sociais e muito mais
-          </p>
+          <div className="flex flex-col gap-2 w-full">
+            <p>
+              Um gerador de QrCode para compartilhar links, links de rede sociais e muito mais
+            </p>
+            <div>
+              <p>Principais tecnologias:</p>
+              <ul className="flex w-full gap-2 items-center even:[&_li]:before:content-['•'] 
+                even:[&_li]:after:content-['•'] even:[&_li]:after:ml-2 even:[&_li]:before:mr-2"
+              >
+                <li>Next.js</li>
+
+                <li>React QrCode</li>
+
+                <li>Framer motion</li>
+              </ul>
+            </div>
+          </div>
         );
       },
     },

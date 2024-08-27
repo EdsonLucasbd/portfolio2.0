@@ -1,11 +1,20 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef } from "react";
 import { Subtitle } from "../ui/Subtitle";
 import { SkillCard } from "./SkillCard";
 import { CanvasRevealEffect } from "../ui/canvas-reveal-effect";
 import Image from "next/image";
 import { AnimatedContainer } from "../ui/AnimatedContainer";
+import { RiReactjsFill } from "react-icons/ri";
+import { TbBrandNextjs } from "react-icons/tb";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { RiJavascriptFill } from "react-icons/ri";
+import { BiLogoTypescript } from "react-icons/bi";
+import { GrGraphQl } from "react-icons/gr";
+import { SiApollographql } from "react-icons/si";
+import { SiReactquery } from "react-icons/si";
+import { FaGitAlt } from "react-icons/fa";
+import { FaFigma } from "react-icons/fa";
 
 interface SkillsProps {
 	isVisible?: boolean
@@ -18,77 +27,65 @@ export const Skills = forwardRef<HTMLDivElement, SkillsProps>((props, ref) => {
 	const skills = [
 		{
 			name: "React",
-			icon: <Image src="/skills/react.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/react-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <RiReactjsFill aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <RiReactjsFill aria-hidden className="size-[55px] text-[#38bdf8]" />,
 			color: [[56, 189, 248]],
 		},
 		{
 			name: "Next.Js",
-			icon: <Image src="/skills/nextjs.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/nextjs-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <TbBrandNextjs aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <TbBrandNextjs aria-hidden className="size-[55px] text-white" />,
 			color: [[255, 255, 255]],
 		},
 		{
 			name: "Tailwind",
-			icon: <Image src="/skills/tailwind.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/tailwind-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <RiTailwindCssFill aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <RiTailwindCssFill aria-hidden className="size-[55px] text-[#38bdf8]" />,
 			color: [[56, 189, 248]],
 		},
 		{
 			name: "JavaScript",
-			icon: <Image src="/skills/javascript.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/javascript-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <RiJavascriptFill aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <RiJavascriptFill aria-hidden className="size-[55px] text-[#f0db4f]" />,
 			color: [[240, 219, 79]],
 		},
 		{
 			name: "TypeScript",
-			icon: <Image src="/skills/typescript.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/typescript-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <BiLogoTypescript aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <BiLogoTypescript aria-hidden className="size-[55px] text-[#3178c6]" />,
 			color: [[49, 120, 198]],
 		},
 		{
 			name: "GraphQl",
-			icon: <Image src="/skills/graphql.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/graphql-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <GrGraphQl aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <GrGraphQl aria-hidden className="size-[55px] text-[#ff0098]" />,
 			color: [[255, 0, 152]],
 		},
 		{
 			name: "Apollo",
-			icon: <Image src="/skills/apollo.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/apollo-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <SiApollographql aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <SiApollographql aria-hidden className="size-[55px] text-white" />,
 			color: [[17, 43, 73], [255, 255, 255]],
 		},
 		{
 			name: "React Query",
-			icon: <Image src="/skills/react-query.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/react-query-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <SiReactquery aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <SiReactquery aria-hidden className="size-[55px] text-[#ff4154]" />,
 			color: [[0, 67, 91], [255, 65, 84], [255, 217, 76]],
 		},
 		{
 			name: "Git",
-			icon: <Image src="/skills/git.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/git-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <FaGitAlt aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <FaGitAlt aria-hidden className="size-[55px] text-[#f05032]" />,
 			color: [[240, 80, 50]],
 		},
 		{
 			name: "Figma",
-			icon: <Image src="/skills/figma.svg" alt="" width={55} height={55} aria-hidden />,
-			colorfulIcon: <Image src="/skills/figma-outline.svg" alt="" width={55} height={55} aria-hidden />,
+			icon: <FaFigma aria-hidden className="size-[55px] text-white/20" />,
+			colorfulIcon: <FaFigma aria-hidden className="size-[55px] text-[#F76E5F]" />,
 			color: [[242, 78, 30], [162, 89, 255], [10, 207, 131]],
 		},
 	];
-
-	const container = {
-		hidden: { opacity: 0, scale: 0 },
-		visible: {
-			opacity: 1,
-			scale: 1,
-			transition: {
-				delayChildren: 0.3,
-				staggerChildren: 0.2,
-			},
-		},
-	};
 
 	return (
 		<AnimatedContainer
