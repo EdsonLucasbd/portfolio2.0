@@ -28,7 +28,7 @@ export const About = () => {
         <p className="text-white animate-fade-up animate-ease-linear animate-delay-300 text-balance">
           Desenvolvedor front-end com +4 anos de experiência, apaixonado por criar experiências digitais
           incríveis, estou sempre em busca de desafios e aprendizado
-          constante. Tenho explorado frameworks modernos como React e Next.js,
+          constante. Tenho explorado bibliotecas e frameworks modernos como React e Next.js,
           além de me aventurar no universo mobile com o React Native. Acredito
           que a combinação de design elegante e uma usabilidade intuitiva é a chave para
           interfaces excepcionais.
