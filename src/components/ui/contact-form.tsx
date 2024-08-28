@@ -80,7 +80,7 @@ export const ContactForm = () => {
 
   return (
     <div className='flex flex-col max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 
-      md:p-8 border border-white/[0.2] bg-black gap-4'
+      md:p-8 border border-white/[0.2] bg-black/[0.8] lg:bg-black gap-4 backdrop-blur lg:backdrop-blur-none z-50'
       id='contact'
     >
       <h3 className='font-bold text-white text-2xl'>Entre em contato comigo</h3>

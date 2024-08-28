@@ -9,6 +9,7 @@ import { ContactForm } from "@/components/ui/contact-form";
 import { ProjectsContainer } from "@/components/Projects";
 import { SkillsContainer } from "@/components/Skills";
 import { ServicesContainer } from "@/components/Services";
+import { BoltIcon } from "@/components/BoltIcon";
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
 
         <section className="flex flex-col items-center justify-center h-full w-full">
           <ContactForm />
+          <BoltIcon />
         </section>
       </TracingBeam>
     </main>
