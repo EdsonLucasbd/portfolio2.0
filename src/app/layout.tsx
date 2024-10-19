@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/ui/Footer";
@@ -11,9 +11,30 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-	title: "Edson Lucas | Portfólio",
-	description: "Desenvolvedor FrontEnd",
+	metadataBase: new URL('https://oedsonlucas.com.br'),
+	title: 'Edson Lucas | Portfólio',
+	description: 'Portfólio Desenvolvedor FrontEnd',
+	creator: 'Edson Lucas',
+	keywords: [
+		'Desenvolvedor', 'Desenvolvedor front-end', 'Desenvolvedor front end',
+		'Desenvolvedor React', 'Desenvolvedor Javascript', 'Portfólio', 'Portfólio desenvolvedor',
+		'Portfólio front-end', 'Portfólio front end', 'Portfólio desenvolvedor front-end',
+		'Portfólio desenvolvedor front end', 'Front-end', 'Front end', 'Front-end freelancer',
+		'Front end freelancer'
+	],
+	openGraph: {
+		title: 'Edson Lucas | Portfólio',
+		description: 'Portfólio Desenvolvedor FrontEnd',
+		url: 'https://oedsonlucas.com.br',
+		images: '/og-image.svg',
+		locale: 'pt_BR',
+		type: 'website',
+	},
 };
+
+export const viewport: Viewport = {
+	themeColor: 'black',
+}
 
 export default function RootLayout({
 	children,
