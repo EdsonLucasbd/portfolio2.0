@@ -26,7 +26,18 @@ export const metadata: Metadata = {
 		title: 'Edson Lucas | Portfólio',
 		description: 'Portfólio Desenvolvedor FrontEnd',
 		url: 'https://oedsonlucas.com.br',
-		images: '/og-image.svg',
+		images: [
+			{
+				url: '/og-image-alt.svg',
+				width: 526,
+				height: 263,
+			},
+			{
+				url: '/og-image.svg',
+				width: 1600,
+				height: 800,
+			}
+		],
 		locale: 'pt_BR',
 		type: 'website',
 	},
